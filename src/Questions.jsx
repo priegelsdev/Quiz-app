@@ -4,9 +4,9 @@ export default function Questions() {
     <main className="questions-main">
       <div className="question"></div>
       <div className="question"></div>
-      <div className="question">please</div>
       <div className="question"></div>
-      <div className="question">more</div>
+      <div className="question"></div>
+      <div className="question"></div>
     </main>
   )
 
