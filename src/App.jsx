@@ -1,15 +1,16 @@
-import Answers from './Answers'
+import Answer from './Answer'
 import Intro from './Intro'
-import Questions from './Questions'
+import Question from './Question'
 
 export default function App() {
+
   return (
     <main>
       <Intro 
       />
-      <Questions
+      <Question
       />
-      <Answers
+      <Answer
       />
     </main>
   )
