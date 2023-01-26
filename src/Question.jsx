@@ -30,8 +30,9 @@ export default function Question(props) {
 
   const answerElements = shuffledAnswers.map(answer => {
     return <span 
-        key = {crypto.randomUUID()} 
         className = "answer"
+        key = {crypto.randomUUID()} 
+        onClick = {props.onClick}
   // this line belongs in Answer Component; here for testing purposes
   /*       className = {answer === props.correctAnswer ? 'correct' : 'wrong'} */
         > {answer}
@@ -49,3 +50,6 @@ export default function Question(props) {
   )
 
 }
+
+// try to implement here
+/* className = {answer === props.correctAnswer ? 'correct' : 'wrong'} */

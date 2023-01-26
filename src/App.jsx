@@ -18,6 +18,8 @@ export default function App() {
   })
   const [questions, setQuestions] = useState([])
 
+  const [isLogged, setIsLogged] = useState(false)
+
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=5&type=multiple')
     .then(res => res.json())
@@ -32,9 +34,18 @@ export default function App() {
       question={question.question}
       incorrectAnswers={question.incorrect_answers}
       correctAnswer={question.correct_answer}
+      isLogged={isLogged}
+      onClick={logAnswer}
     />
   })
 
+  function logAnswer() {
+    setIsLogged(prevState => !prevState)
+
+    if (isLogged) {
+      console.log('test')
+    }
+  }
 
   // plan for now: create two view states when clicking button: questions & answer
   // in those create state for selected item and 
@@ -56,6 +67,9 @@ export default function App() {
     }))
   }
 
+  function test() {
+    console.log('test')
+  }
 
 /*   const answers =  */
 
