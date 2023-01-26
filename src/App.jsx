@@ -27,6 +27,8 @@ export default function App() {
   const qEls = questions.map(question => {
     return <Question 
       question={question.question}
+      incorrectAnswers={question.incorrect_answers}
+      correctAnswer={question.correct_answer}
     />
   })
 
@@ -65,7 +67,7 @@ export default function App() {
 {/*       {view.questionsView && {qEls}} */}
       {qEls}
       {view.answersView && <Answer />}
-      
+
       {view.questionsView && <button className="check-btn" onClick={checkAnswers}>Check answers</button>}
     </main>
   )
