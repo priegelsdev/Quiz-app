@@ -11,6 +11,7 @@ export default function Question(props) {
     return array
   }
 
+  // THINK OF BETTER SOLUTION AS ACCENTS IN FRENCH LANGUAGE FOR EXAMPLE ARE STILL THROWING BUGS !!!!!!! 
   // function to format JSON res for special characters 
   function formatJson(text) {
     return text.replace(/&quot;/g, '"').replace(/&#039;/g, `'`).replace(/&amp;/g, '&')

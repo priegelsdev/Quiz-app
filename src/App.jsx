@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react'
 import Answer from './Answer'
 import Intro from './Intro'
 import Question from './Question'
+import blobOne from './assets/img/blob1.png'
+import blobTwo from './assets/img/blob2.png'
 
 export default function App() {
   // save data to state to be displayed in either questions/answers view
@@ -61,16 +63,19 @@ export default function App() {
 
   return (
     <main>
+      <img className="blob-one" src={blobOne}/>
       {/* if introView, show Intro component,
             else if questionsView, show question components,
             else if answersView, show answers components */}
-      {view.introView && <Intro onClick={startGame}/>}
-{/*       {view.questionsView && {qEls}} */}
+      {view.introView && <div className="intro-container">
+        <Intro onClick={startGame}/>
+      </div>}
+      {view.questionsView && <div className="questions-container">{qEls}</div>}
             
-      {qEls}
       {view.answersView && <Answer />}
 
       {view.questionsView && <button className="check-btn" onClick={checkAnswers}>Check answers</button>}
+      <img className="blob-two" src={blobTwo}/>
     </main>
   )
 }
