@@ -25,7 +25,8 @@ export default function App() {
   }, [viewScreen.introView])
 
   const qEls = questions.map(question => {
-    return <Question 
+    return <Question
+      key={crypto.randomUUID()}
       question={question.question}
       incorrectAnswers={question.incorrect_answers}
       correctAnswer={question.correct_answer}
