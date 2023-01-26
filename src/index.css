@@ -60,3 +60,11 @@ h1, h3 {
   padding: 1em 3.5em;
   cursor: pointer;
 }
+
+.correct {
+  outline: 1px solid green;
+}
+
+.wrong {
+  outline: 1px solid red;
+}

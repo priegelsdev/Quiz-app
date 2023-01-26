@@ -20,7 +20,7 @@ export default function Question(props) {
 
   const shuffledAnswers = shuffle(allAnswers)
 
-  const answerElements = shuffledAnswers.map(answer => <span>{answer}</span>)
+  const answerElements = shuffledAnswers.map(answer => <span className={answer === correctAnswer ? 'wrong' : 'correct'}>{answer} </span>)
   
 
 
