@@ -9,13 +9,11 @@ export default function App() {
 
   // initializing question state on button click
 
-  let viewScreen = {
+  const [view, setView] = useState({
     introView: true,
     questionsView: false,
     answersView: false
-  }
-
-  const [view, setView] = useState(viewScreen)
+  })
   const [questions, setQuestions] = useState([])
 
   useEffect(() => {
@@ -24,7 +22,7 @@ export default function App() {
     .then(data => {
       console.log(data.results)
       setQuestions(data.results)})
-  }, [viewScreen.introView])
+  }, [view.introView])
 
   const qEls = questions.map(question => {
     return <Question
@@ -68,6 +66,7 @@ export default function App() {
             else if answersView, show answers components */}
       {view.introView && <Intro onClick={startGame}/>}
 {/*       {view.questionsView && {qEls}} */}
+            
       {qEls}
       {view.answersView && <Answer />}
 

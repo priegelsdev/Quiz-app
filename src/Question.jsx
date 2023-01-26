@@ -38,9 +38,12 @@ export default function Question(props) {
   )
 
   return (
-      <div className="question">
+      <div className="question-container">
         <h2 className="question-text">{formattedQuestion}</h2>
-        <span> {answerElements} </span>
+        <div className="answers-container">
+          {answerElements}
+        </div>
+      <hr></hr>
       </div>
   )
 
