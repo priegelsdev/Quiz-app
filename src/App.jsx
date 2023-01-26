@@ -24,7 +24,11 @@ export default function App() {
     .then(data => setQuestions(data.results))
   }, [viewScreen.introView])
 
-  console.log(questions)
+  const qEls = questions.map(question => {
+    return <Question 
+      question={question.question}
+    />
+  })
 
 
   // plan for now: create two view states when clicking button: questions & answer
@@ -47,7 +51,6 @@ export default function App() {
     }))
   }
 
-/*   const questions =  */
 
 /*   const answers =  */
 
@@ -59,8 +62,11 @@ export default function App() {
             else if questionsView, show question components,
             else if answersView, show answers components */}
       {view.introView && <Intro onClick={startGame}/>}
-      {view.questionsView && <Question onClick={checkAnswers}/>}
+{/*       {view.questionsView && {qEls}} */}
+      {qEls}
       {view.answersView && <Answer />}
+      
+      {view.questionsView && <button className="check-btn" onClick={checkAnswers}>Check answers</button>}
     </main>
   )
 }
