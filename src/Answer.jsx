@@ -9,3 +9,7 @@ export default function Answers(props) {
   )
 
 }
+
+
+
+ /*       className = {answer === props.correctAnswer ? 'correct' : 'wrong'} */
