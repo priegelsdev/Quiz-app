@@ -21,7 +21,9 @@ export default function App() {
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=5&type=multiple')
     .then(res => res.json())
-    .then(data => setQuestions(data.results))
+    .then(data => {
+      console.log(data.results)
+      setQuestions(data.results)})
   }, [viewScreen.introView])
 
   const qEls = questions.map(question => {

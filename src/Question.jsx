@@ -11,6 +11,10 @@ export default function Question(props) {
     return array
   }
 
+  // replace JSON res for special characters 
+  const formattedQuestion = props.question.replace(/&quot;/g, '"').replace(/&#039;/g, `'`)
+
+  // answers from JSON res shuffled so it's not the same answer in the same position
   const allAnswers = props.incorrectAnswers.map(incorrectAnswer => incorrectAnswer)
   allAnswers.push(props.correctAnswer)
   const shuffledAnswers = shuffle(allAnswers)
@@ -18,14 +22,14 @@ export default function Question(props) {
   const answerElements = shuffledAnswers.map(answer => {
     return <span 
         key = {crypto.randomUUID()} 
-        className = {answer === props.correctAnswer ? 'wrong' : 'correct'}
+        className = {answer === props.correctAnswer ? 'correct' : 'wrong'}
         > {answer}
       </span>}
   )
 
   return (
       <div className="question">
-        <h2 className="question-text">{props.question}</h2>
+        <h2 className="question-text">{formattedQuestion}</h2>
         <span> {answerElements} </span>
       </div>
   )
